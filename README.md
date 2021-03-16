@@ -111,7 +111,7 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 ## Konfigurasi
 [`^ kembali ke atas ^`](#)
 
-Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabel. kita dapat melihat daftar variabel ini di configuration.js. 
+Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabel. kita dapat melihat daftar variabel ini di `configuration.js`. 
 
 * Beberapa variabel diantaranya :
 1. `WBO_HISTORY_DIR`: berfungsi untuk mengkonfigurasi direktori tempat board disimpan. Default-nya adalah `./server-data/`.
