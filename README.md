@@ -115,9 +115,24 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 [`^ kembali ke atas ^`](#)
 
 Cara pemakaian WBO sangat mudah karena tampilan interface yang sangat sederhana sehingga dapat mudah dimengerti. Berikut lebih jelasnya :
-1. Halaman utama 
+1. Halaman utama
 ![1](https://user-images.githubusercontent.com/60084871/111373802-ed722d80-86ce-11eb-8c79-f40d1dfc28bd.png)
-  
+
+2. Terdapat beberapa pilihan bahasa yang tersedia sehingga dapat memudahkan kita dalam menggunakannya
+![2](https://user-images.githubusercontent.com/60084871/111375164-86ee0f00-86d0-11eb-8ea0-28b854f4e0e4.png)
+
+3. Tersedia “Public Board” dimana nantinya anda dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap user.
+![3](https://user-images.githubusercontent.com/60084871/111375214-90777700-86d0-11eb-8a51-501acffeb318.png)
+
+4. Tersedia “Privat Board” dimana anda dapat membuat board pribadi dengan penamaan random, dan board ini pun hanya bisa diakses melalui link tautannya.
+![4](https://user-images.githubusercontent.com/60084871/111375229-94a39480-86d0-11eb-9767-e5f54e06288d.png)
+
+5. Tersedia “Named Privat Board” dimana anda dapat membuat board dengan nama sesuai yang anda inginkan, dan anda juga dapat berbagi link tautan board tersebut.
+![5](https://user-images.githubusercontent.com/60084871/111375246-98371b80-86d0-11eb-9e2a-5228b4a4ef23.png)
+
+6. Tampilan board, pada bagian ini terdapat beberapa tools paint yang dapat kita gunakan dalam berkolaborasi
+![6](https://user-images.githubusercontent.com/60084871/111375260-9b320c00-86d0-11eb-99b8-5ba44c541f09.png)
+
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
 
