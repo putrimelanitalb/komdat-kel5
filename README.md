@@ -111,6 +111,12 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 ## Konfigurasi
 [`^ kembali ke atas ^`](#)
 
+Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabel. kita dapat melihat daftar variabel ini di configuration.js. 
+
+* Beberapa variabel diantaranya :
+1. `WBO_HISTORY_DIR`: berfungsi untuk mengkonfigurasi direktori tempat board disimpan. Default-nya adalah `./server-data/`.
+2. `WBO_MAX_EMIT_COUNT` : jumlah maksimum pesan yang dapat dikirim per unit waktu. Biasanya digunakan agar kualitas gambar yang dihasilkan dapat lebih halus. Secara default, unit kuantitasnya sebesar pesan per 4 detik, dan nilai defaultnya adalah  `192`.
+
 ## Cara Pemakaian
 [`^ kembali ke atas ^`](#)
 
