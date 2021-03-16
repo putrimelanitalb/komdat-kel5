@@ -26,7 +26,7 @@
 [`^ kembali ke atas ^`](#)
 
 ### Kebutuhan Sistem
-Berikut versi dari kebutuhan sistem yang kami install dan gunakan:
+Berikut versi dari kebutuhan sistem yang kami install dan gunakan :
 * Windows 10
 * Oracle VM VirtualBox
 * VDI Ubuntu 20.04 LTS
@@ -55,7 +55,7 @@ Kami melakukan instalasi dan menjalankan aplikasi WBO menggunakan VM Ubuntu Serv
 #### 2. Setting Port Forwarding VM
 Sebelum memulai VM, kita harus mengatur *Port Forwarding* terlebih dahulu agar dapat diakses dari luar melalui alamat Host IP (*localhost*).
 * Masuk ke *Settings -> Network -> Advanced -> Port Forwarding*.
-* Tambahkan tiga aturan *port forwarding* untuk `http`, `ssh`, dan `wbo` (untuk aplikasi WBO) yaitu:
+* Tambahkan tiga aturan *port forwarding* untuk `http`, `ssh`, dan `wbo` (untuk aplikasi WBO) yaitu :
 
   | Name | Protocol | Host IP | Host Port | Guest IP | Guest Port |
   | ---- | -------- | ------- | --------- | -------- | ---------- |
@@ -120,7 +120,7 @@ Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabe
 2. `WBO_MAX_EMIT_COUNT`: jumlah maksimum pesan yang dapat dikirim per unit waktu. Biasanya digunakan agar kualitas gambar yang dihasilkan dapat lebih halus. Secara *default*, unit kuantitasnya sebesar pesan per 4 detik, dan nilai *default*-nya adalah `192`.
 
 ### Translation
-WBO tersedia dalam berbagai bahasa. Terjemahan disimpan di `server/translations.json`. Kita dapat menambahkan terjemahan WBO ke dalam bahasa yang belum tersedia. Berikut langkah-langkahnya:
+WBO tersedia dalam berbagai bahasa. Terjemahan disimpan di `server/translations.json`. Kita dapat menambahkan terjemahan WBO ke dalam bahasa yang belum tersedia. Berikut langkah-langkahnya :
 
 1. Edit isi file server/translations.json.
    ```
@@ -171,20 +171,20 @@ WBO tersedia dalam berbagai bahasa. Terjemahan disimpan di `server/translations.
 ## Cara Pemakaian
 [`^ kembali ke atas ^`](#)
 
-Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingga mudah dimengerti. Berikut lebih jelasnya:
+Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingga mudah dimengerti. Berikut lebih jelasnya :
 1. Halaman utama.
 ![1](https://user-images.githubusercontent.com/57716837/111383984-8e66e580-86db-11eb-88f4-71c92610ac26.png)
 
 2. Terdapat beberapa pilihan bahasa yang tersedia sehingga memudahkan kita dalam menggunakannya.
 ![2](https://user-images.githubusercontent.com/60084871/111375164-86ee0f00-86d0-11eb-8ea0-28b854f4e0e4.png)
 
-3. Tersedia “Public Board” dimana nantinya kita dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap pengguna.
+3. Tersedia **“Public Board”** dimana nantinya kita dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap pengguna.
 ![3](https://user-images.githubusercontent.com/60084871/111375214-90777700-86d0-11eb-8a51-501acffeb318.png)
 
-4. Tersedia “Privat Board” dimana kita dapat membuat *board* pribadi dengan nama random, dan *board* ini pun hanya bisa diakses melalui link tautannya.
+4. Tersedia **“Privat Board”** dimana kita dapat membuat *board* pribadi dengan nama random, dan *board* ini pun hanya bisa diakses melalui link tautannya.
 ![4](https://user-images.githubusercontent.com/60084871/111375229-94a39480-86d0-11eb-9767-e5f54e06288d.png)
 
-5. Tersedia “Named Privat Board” dimana kita dapat membuat *board* dengan nama yang sesuai kita inginkan, dan kita juga dapat berbagi link tautan *board* tersebut.
+5. Tersedia **“Named Private Board”** dimana kita dapat membuat *board* dengan nama yang sesuai kita inginkan, dan kita juga dapat berbagi link tautan *board* tersebut.
 ![5](https://user-images.githubusercontent.com/60084871/111375246-98371b80-86d0-11eb-9e2a-5228b4a4ef23.png)
 
 6. Tampilan *board*, pada bagian ini terdapat beberapa *tools paint* yang dapat kita gunakan dalam berkolaborasi.
@@ -197,28 +197,28 @@ Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingg
 
 ### 1. Pendapat tentang Aplikasi WBO
 * Kelebihan
-  1. Membagi fitur menjadi dua kategori, yaitu *public board* dan *private board*.
-  2. Tidak memerlukan memori yang besar, sehingga sistem ini ringan untuk digunakan.
-  3. Menampilkan data *real time* penggambaran pada *board*.
+  * Membagi fitur menjadi dua kategori, yaitu *public board* dan *private board*.
+  * Tidak memerlukan memori yang besar, sehingga sistem ini ringan untuk digunakan.
+  * Menampilkan data *real time* penggambaran pada *board*.
 * Kekurangan
-  1. Tampilan yang sangat sederhana, sehingga terlihat kurang menarik.
-  2. Sistem masih memiliki *tools paint* yang terbatas.
+  * Tampilan yang sangat sederhana, sehingga terlihat kurang menarik.
+  * Sistem masih memiliki *tools paint* yang terbatas.
 
 ### 2. Perbandingan Aplikasi *Whiteboard* Lainnya
-#### Jamboard
-**Jamboard** adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan secara *real time*. Kelebihannya :
+#### a. Jamboard
+**Jamboard** adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan secara *real time*. Kelebihan :
 1. Dapat mengambil gambar dari penelusuran Google dengan cepat.
 2. Dapat menyimpan pekerjaan ke Cloud secara otomatis.
 3. Menggunakan fitur pengenalan bentuk dan tulisan tangan yang mudah dibaca.
 
-#### Open Board
-**Open Board** adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas. Kelebihannya :
+#### b. Open Board
+**Open Board** adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas. Kelebihan :
 1. Tersedia untuk *mobile*, macOS, Linux, dan Windows.
 2. Merupakan solusi *open-source* di bawah GPLv3 dan dikelola komunitas GitHub.
 3. Terintegrasi dengan *browser web*.
 
-#### Stormboard
-**Stormboard** adalah solusi perencanaan dan *brainstorming online* interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah. Kelebihannya :
+#### c. Stormboard
+**Stormboard** adalah solusi perencanaan dan *brainstorming online* interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah. Kelebihan :
 1. Terintegrasi dengan Google, Microsoft, Trello, dan Pipedrive.
 2. Memiliki data keamanan bersertifikat dengan koneksi SSL 256 bit dari internet.
 3. Sistem berbasis Cloud yang didukung dengan jam *online* dan bisnis.
