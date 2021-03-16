@@ -113,7 +113,13 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 
 ## Cara Pemakaian
 [`^ kembali ke atas ^`](#)
-    
+
+Cara pemakaian WBO sangat mudah karena tampilan interface yang sangat sederhana sehingga dapat mudah dimengerti. Berikut lebih jelasnya :
+1. Halaman utama 
+<p align="center">
+  <img width="200" src="https://1.png")
+</p>
+  
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
 
