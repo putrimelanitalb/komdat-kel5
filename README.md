@@ -116,7 +116,7 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 
 Cara pemakaian WBO sangat mudah karena tampilan interface yang sangat sederhana sehingga dapat mudah dimengerti. Berikut lebih jelasnya :
 1. Halaman utama 
-
+![1](https://user-images.githubusercontent.com/60084871/111373802-ed722d80-86ce-11eb-8c79-f40d1dfc28bd.png)
   
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
