@@ -18,7 +18,7 @@
 ## Sekilas Tentang
 [`^ kembali ke atas ^`](#)
 
-**WBO** adalah *whiteboard online* kolaboratif yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan akan diperbarui secara *real time* untuk semua pengguna yang terhubung, dan statusnya selalu dipertahankan. Aplikasi ini dapat digunakan untuk berbagai tujuan, termasuk seni, hiburan, desain, ataupun pengajaran. Untuk berkolaborasi gambar secara *real time* dengan seseorang, cukup mengirimkan URL-nya saja.
+**WBO** adalah papan tulis kolaboratif online yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan akan diperbarui secara *real time* untuk semua pengguna yang terhubung, dan statusnya tetap. Aplikasi ini dapat digunakan untuk berbagai tujuan, termasuk seni, hiburan, desain, ataupun pengajaran. Untuk berkolaborasi gambar secara *real time* dengan seseorang, cukup hanya mengirimkan URL-nya saja.
 
 ![wbo-draw](https://user-images.githubusercontent.com/57716837/111366807-95cfc400-86c6-11eb-95f8-576fa2754069.png)
 
@@ -37,7 +37,7 @@ Berikut versi dari kebutuhan sistem yang kami install dan gunakan:
 
 ### Setup VM
 
-Kami melakukan instalasi dan menjalankan aplikasi WBO menggunakan VM Ubuntu Server. Oleh karena itu, kami perlu membuat sebuah VM dan melakukan beberapa *setting* agar dapat dijalankan di Windows.
+Kami melakukan instalasi dan menjalankan aplikasi WBO menggunakan VM Ubuntu Server. Oleh karena itu, kita perlu membuat sebuah VM dan melakukan beberapa *setting* agar dapat dijalankan di Windows.
 
 #### 1. Membuat VM Ubuntu Server
 * Unduh dan install VM di [sini](https://www.virtualbox.org/wiki/Downloads) dan pilih *Windows hosts*.
@@ -53,7 +53,7 @@ Kami melakukan instalasi dan menjalankan aplikasi WBO menggunakan VM Ubuntu Serv
 * Pilih *Install Ubuntu* dan lakukan setup Ubuntu. Tunggu instalasi hingga selesai dan *restart* VM.
 
 #### 2. Setting Port Forwarding VM
-Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar dapat diakses dari luar melalui alamat Host IP (*localhost*).
+Sebelum memulai VM, kita harus mengatur *Port Forwarding* terlebih dahulu agar dapat diakses dari luar melalui alamat Host IP (*localhost*).
 * Masuk ke *Settings -> Network -> Advanced -> Port Forwarding*.
 * Tambahkan tiga aturan *port forwarding* untuk `http`, `ssh`, dan `wbo` (untuk aplikasi WBO) yaitu:
 
@@ -64,10 +64,18 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
   | wbo | TCP |  | 50 |  | 5001 |
 
 * Jika sudah selesai, jalankan VM Ubuntu.
-* Buka Terminal di VM, lalu mulai dan aktifkan SSH. Kemudian pastikan SSH sudah aktif.
+* Buka Terminal di VM, lalu unduh informasi *packages* yang terbaru dari repositori.
   ```
-  $ sudo systemctl start ssh
+  $ sudo apt-get update
+  ```
+* Install openSSH server.
+  ```
+  $ sudo apt-get install openssh-server
+  ```
+* Mulai dan aktifkan SSH, serta pastikan SSH sudah aktif.
+  ```
   $ sudo systemctl enable ssh
+  $ sudo systemctl start ssh
   $ sudo systemctl status ssh
   ```
 
@@ -78,10 +86,6 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
   ssh username@localhost -p 2200
   ```
 #### 2. Instalasi Kebutuhan Sistem
-* Pastikan seluruh paket sistem dalam versi *up-to-date*.
-  ```
-  $ sudo apt update
-  ```
 * Install git, node.js, npm, dan vim.
   ```
   $ sudo apt install git
@@ -90,7 +94,7 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
   $ sudo apt install vim
   ```
 #### 3. Unduh dan Install WBO
-* Pertama, unduh WBO dengan cara clone repository.
+* Pertama, unduh WBO dengan cara clone dari original repository.
   ```
   $ sudo git clone https://github.com/lovasoa/whitebophir.git
   ```
@@ -102,7 +106,7 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
   ```
   $ sudo npm install --production
   ```
-* Terakhir, sudah dapat memulai server pada *port* 5001 dan masukkan *password* VM.
+* Terakhir, memulai server pada *port* 5001 dan masukkan *password* VM.
   ```
   $ sudo PORT=5001 npm start
   ```
@@ -111,70 +115,113 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 ## Konfigurasi
 [`^ kembali ke atas ^`](#)
 
-Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabel. kita dapat melihat daftar variabel ini di `configuration.js`. 
+Saat memulai server WBO, server akan memuat konfigurasinya dari beberapa variabel. Kita dapat melihat daftar variabel ini di `configuration.js`. Beberapa variabel diantaranya :
+1. `WBO_HISTORY_DIR`: berfungsi untuk mengkonfigurasi direktori tempat papan disimpan. *Default*-nya adalah `./server-data/`.
+2. `WBO_MAX_EMIT_COUNT`: jumlah maksimum pesan yang dapat dikirim per unit waktu. Biasanya digunakan agar kualitas gambar yang dihasilkan dapat lebih halus. Secara *default*, unit kuantitasnya sebesar pesan per 4 detik, dan nilai *default*-nya adalah `192`.
 
-* Beberapa variabel diantaranya :
-1. `WBO_HISTORY_DIR`: berfungsi untuk mengkonfigurasi direktori tempat board disimpan. Default-nya adalah `./server-data/`.
-2. `WBO_MAX_EMIT_COUNT` : jumlah maksimum pesan yang dapat dikirim per unit waktu. Biasanya digunakan agar kualitas gambar yang dihasilkan dapat lebih halus. Secara default, unit kuantitasnya sebesar pesan per 4 detik, dan nilai defaultnya adalah  `192`.
+### Translation
+WBO tersedia dalam berbagai bahasa. Terjemahan disimpan di `server/translations.json`. Kita dapat menambahkan terjemahan WBO ke dalam bahasa yang belum tersedia. Berikut langkah-langkahnya:
+
+1. Edit isi file server/translations.json.
+   ```
+   sudo vim server/translations.json
+   ```
+2. Tambahkan isi terjemahan bahasa yang baru di bawah bahasa lain. Misal, menambahkan Bahasa Indonesia ke dalam WBO.
+   ```
+   "id": {
+    "hand": "Tangan",
+    "loading": "Memuat",
+    "tagline": "Alat menggambar kolaboratif online gratis dan open-source. Buat sketsa ide baru bersama-sama di WBO!",
+    "configuration": "Konfigurasi",
+    "collaborative_whiteboard": "Papan tulis kolaboratif",
+    "size": "Ukuran",
+    "zoom": "Perbesar",
+    "tools": "Alat",
+    "rectangle": "Persegi panjang",
+    "square": "Persegi",
+    "circle": "Lingkaran",
+    "ellipse": "Elips",
+    "click_to_toggle": "klik untuk beralih",
+    "menu": "Menu",
+    "text": "Teks",
+    "mover": "Penggerak",
+    "straight_line": "Garis lurus",
+    "pencil": "Pensil",
+    "grid": "Kisi",
+    "click_to_zoom": "Klik untuk memperbesar\nTekan shift and klik untuk memperkecil",
+    "keyboard_shortcut": "pintasan keyboard",
+    "mousewheel": "mouse wheel",
+    "opacity": "Opasitas",
+    "color": "Warna",
+    "eraser": "Penghapus",
+    "White-out": "White-out",
+    "index_title": "Selamat datang di papan tulis online gratis WBO!",
+    "introduction_paragraph": "WBO adalah papan tulis kolaboratif online <a href=\"https://github.com/lovasoa/whitebophir\" title=\"Bebas seperti dalam kebebasan berbicara, bukan bir gratis. Perangkat lunak ini dirilis di bawah lisensi AGPL\">gratis dan open-source</a> yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan akan diperbarui secara real time untuk semua pengguna yang terhubung, dan statusnya tetap. Ini dapat digunakan untuk berbagai tujuan, termasuk seni, hiburan, desain dan pengajaran.",
+    "share_instructions": "Untuk berkolaborasi pada gambar secara real time dengan seseorang, cukup hanya mengirimkan URL-nya saja.",
+    "public_board_description": "<b>Papan publik</b>dapat diakses oleh semua orang. Ini adalah kekacauan yang menyenangkan dan tidak terorganisir di mana Anda dapat bertemu dengan orang asing yang tidak dikenal dan berkumpul bersama. Segala sesuatu di sana hanya sementara.",
+    "open_public_board": "Menuju papan publik",
+    "private_board_description": "Anda dapat membuat <b>papan pribadi</b> dengan nama random, yang hanya dapat diakses melalui tautannya. Gunakan ini jika Anda ingin berbagi informasi pribadi.",
+    "create_private_board": Buat papan privat",
+    "named_private_board_description": "Anda juga dapat <strong>menamai papan pribadi</strong> dengan URL khusus, yang akan dapat diakses oleh semua orang yang mengetahui namanya.",
+    "board_name_placeholder": "Nama papan…",
+    "view_source": "Sumber kode dari GitHub"
+   },
+   ```
 
 ## Cara Pemakaian
 [`^ kembali ke atas ^`](#)
 
-Cara pemakaian WBO sangat mudah karena tampilan interface yang sangat sederhana sehingga dapat mudah dimengerti. Berikut lebih jelasnya :
-1. Halaman utama
-![1](https://user-images.githubusercontent.com/60084871/111373802-ed722d80-86ce-11eb-8c79-f40d1dfc28bd.png)
+Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingga mudah dimengerti. Berikut lebih jelasnya:
+1. Halaman utama.
+![1](https://user-images.githubusercontent.com/57716837/111383984-8e66e580-86db-11eb-88f4-71c92610ac26.png)
 
-2. Terdapat beberapa pilihan bahasa yang tersedia sehingga dapat memudahkan kita dalam menggunakannya
+2. Terdapat beberapa pilihan bahasa yang tersedia sehingga memudahkan kita dalam menggunakannya.
 ![2](https://user-images.githubusercontent.com/60084871/111375164-86ee0f00-86d0-11eb-8ea0-28b854f4e0e4.png)
 
-3. Tersedia “Public Board” dimana nantinya anda dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap user.
+3. Tersedia “Public Board” dimana nantinya kita dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap pengguna.
 ![3](https://user-images.githubusercontent.com/60084871/111375214-90777700-86d0-11eb-8a51-501acffeb318.png)
 
-4. Tersedia “Privat Board” dimana anda dapat membuat board pribadi dengan penamaan random, dan board ini pun hanya bisa diakses melalui link tautannya.
+4. Tersedia “Privat Board” dimana kita dapat membuat *board* pribadi dengan nama random, dan *board* ini pun hanya bisa diakses melalui link tautannya.
 ![4](https://user-images.githubusercontent.com/60084871/111375229-94a39480-86d0-11eb-9767-e5f54e06288d.png)
 
-5. Tersedia “Named Privat Board” dimana anda dapat membuat board dengan nama sesuai yang anda inginkan, dan anda juga dapat berbagi link tautan board tersebut.
+5. Tersedia “Named Privat Board” dimana kita dapat membuat *board* dengan nama yang sesuai kita inginkan, dan kita juga dapat berbagi link tautan *board* tersebut.
 ![5](https://user-images.githubusercontent.com/60084871/111375246-98371b80-86d0-11eb-9e2a-5228b4a4ef23.png)
 
-6. Tampilan board, pada bagian ini terdapat beberapa tools paint yang dapat kita gunakan dalam berkolaborasi
+6. Tampilan *board*, pada bagian ini terdapat beberapa *tools paint* yang dapat kita gunakan dalam berkolaborasi.
 ![6](https://user-images.githubusercontent.com/60084871/111375260-9b320c00-86d0-11eb-99b8-5ba44c541f09.png)
 
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
 
-WBO adalah papan tulis kolaboratif online yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan diperbarui secara real time untuk semua pengguna yang terhubung. Sebelum menginstall aplikasi ini dibutuhkan penginstalan node.js atau docker.
+**WBO** adalah papan tulis kolaboratif online yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan akan diperbarui secara *real time* untuk semua pengguna yang terhubung. Sebelum menginstall aplikasi ini, dibutuhkan penginstalan node.js.
+
+### 1. Pendapat tentang Aplikasi WBO
 * Kelebihan
-1. Membagi fitur menjadi 2 kategori yaitu privat dan public
-2. Tidak memerlukan memori yang besar sehingga sistem ini ringan untuk digunakan
-3. Menampilkan data realtime penggambaran pada board
+  1. Membagi fitur menjadi dua kategori, yaitu *public board* dan *private board*.
+  2. Tidak memerlukan memori yang besar, sehingga sistem ini ringan untuk digunakan.
+  3. Menampilkan data *real time* penggambaran pada *board*.
 * Kekurangan
-1. Tampilan yang sangat sederhana sehingga terlihat kurang menarik
-2. Sistem masih memiliki tools paint yang terbatas
+  1. Tampilan yang sangat sederhana, sehingga terlihat kurang menarik.
+  2. Sistem masih memiliki *tools paint* yang terbatas.
 
-Aplikasi Sejenis
-* Jamboard
+### 2. Perbandingan Aplikasi *Whiteboard* Lainnya
+#### Jamboard
+**Jamboard** adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan secara *real time*. Kelebihannya :
+1. Dapat mengambil gambar dari penelusuran Google dengan cepat.
+2. Dapat menyimpan pekerjaan ke Cloud secara otomatis.
+3. Menggunakan fitur pengenalan bentuk dan tulisan tangan yang mudah dibaca.
 
-Jamboard adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan board secara realtime.
-Kelebihan :
-1. Dapat mengambil gambar dari penelusuran Google dengan cepat
-2. Dapat menyimpan pekerjaan ke cloud secara otomatis
-3. Menggunakan fitur pengenalan bentuk dan tulisan tangan yang mudah dibaca
+#### Open Board
+**Open Board** adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas. Kelebihannya :
+1. Tersedia untuk *mobile*, macOS, Linux, dan Windows.
+2. Merupakan solusi *open-source* di bawah GPLv3 dan dikelola komunitas GitHub.
+3. Terintegrasi dengan *browser web*.
 
-* Open Board
-
-Open Board adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas.
-Kelebihan :
-1. Tersedia untuk mobile, macOS, Linux, dan windows
-2. Merupakan solusi open-source di bawah GPLv3 dan dikelola komunitas GitHub
-3. Terintegrasi dengan browser web
-
-* Stormboard
-
-Storyboard adalah solusi perencanaan dan brainstorming online interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah.
-Kelebihan :
-1. Terintegrasi dengan google, microsoft, trello, dan pipedrive.
-2. Memiliki data keamanan bersertifikat dengan koneksi SSL 256 bit dari internet
-3. Sistem berbasis cloud yang didukung dengan jam online dan bisnis.
+#### Stormboard
+**Stormboard** adalah solusi perencanaan dan *brainstorming online* interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah. Kelebihannya :
+1. Terintegrasi dengan Google, Microsoft, Trello, dan Pipedrive.
+2. Memiliki data keamanan bersertifikat dengan koneksi SSL 256 bit dari internet.
+3. Sistem berbasis Cloud yang didukung dengan jam *online* dan bisnis.
 
 ## Referensi
 [`^ kembali ke atas ^`](#)
