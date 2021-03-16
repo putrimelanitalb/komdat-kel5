@@ -206,19 +206,22 @@ Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingg
 
 ### 2. Perbandingan Aplikasi *Whiteboard* Lainnya
 #### a. Jamboard
-**Jamboard** adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan secara *real time*. Kelebihan :
+**Jamboard** adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan secara *real time*.  
+Kelebihan :
 1. Dapat mengambil gambar dari penelusuran Google dengan cepat.
 2. Dapat menyimpan pekerjaan ke Cloud secara otomatis.
 3. Menggunakan fitur pengenalan bentuk dan tulisan tangan yang mudah dibaca.
 
 #### b. Open Board
-**Open Board** adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas. Kelebihan :
+**Open Board** adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas.  
+Kelebihan :
 1. Tersedia untuk *mobile*, macOS, Linux, dan Windows.
 2. Merupakan solusi *open-source* di bawah GPLv3 dan dikelola komunitas GitHub.
 3. Terintegrasi dengan *browser web*.
 
 #### c. Stormboard
-**Stormboard** adalah solusi perencanaan dan *brainstorming online* interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah. Kelebihan :
+**Stormboard** adalah solusi perencanaan dan *brainstorming online* interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah.  
+Kelebihan :
 1. Terintegrasi dengan Google, Microsoft, Trello, dan Pipedrive.
 2. Memiliki data keamanan bersertifikat dengan koneksi SSL 256 bit dari internet.
 3. Sistem berbasis Cloud yang didukung dengan jam *online* dan bisnis.
