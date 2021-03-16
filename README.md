@@ -126,6 +126,28 @@ WBO adalah papan tulis kolaboratif online yang memungkinkan banyak pengguna meng
 1. Tampilan yang sangat sederhana sehingga terlihat kurang menarik
 2. Sistem masih memiliki tools paint yang terbatas
 
+Aplikasi Sejenis
+* Jamboard
+Jamboard adalah papan tulis digital yang memungkinkan tim yang lokasinya berjauhan untuk berkolaborasi membuat atau melakukan diskusi dengan menggambar pada papan board secara realtime.
+Kelebihan :
+1. Dapat mengambil gambar dari penelusuran Google dengan cepat
+2. Dapat menyimpan pekerjaan ke cloud secara otomatis
+3. Menggunakan fitur pengenalan bentuk dan tulisan tangan yang mudah dibaca
+
+* Open Board
+Open Board adalah papan tulis interaktif dan revolusioner yang dirancang khusus untuk sekolah dan universitas.
+Kelebihan :
+1. Tersedia untuk mobile, macOS, Linux, dan windows
+2. Merupakan solusi open-source di bawah GPLv3 dan dikelola komunitas GitHub
+3. Terintegrasi dengan browser web
+
+* Stormboard
+Storyboard adalah solusi perencanaan dan brainstorming online interaktif yang memungkinkan individu dan perusahaan untuk membangun proyek dan berpartisipasi dalam pertemuan jarak jauh dengan lebih mudah.
+Kelebihan :
+1. Terintegrasi dengan google, microsoft, trello, dan pipedrive.
+2. Memiliki data keamanan bersertifikat dengan koneksi SSL 256 bit dari internet
+3. Sistem berbasis cloud yang didukung dengan jam online dan bisnis.
+
 ## Referensi
 [`^ kembali ke atas ^`](#)
 
