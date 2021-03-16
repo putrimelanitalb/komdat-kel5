@@ -117,6 +117,15 @@ Sebelum memulai VM, kami harus mengatur *Port Forwarding* terlebih dahulu agar d
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
 
+WBO adalah papan tulis kolaboratif online yang memungkinkan banyak pengguna menggambar secara bersamaan di papan virtual besar. Papan diperbarui secara real time untuk semua pengguna yang terhubung. Sebelum menginstall aplikasi ini dibutuhkan penginstalan node.js atau docker.
+* Kelebihan
+1. Membagi fitur menjadi 2 kategori yaitu privat dan public
+2. Tidak memerlukan memori yang besar sehingga sistem ini ringan untuk digunakan
+3. Menampilkan data realtime penggambaran pada board
+* Kekurangan
+1. Tampilan yang sangat sederhana sehingga terlihat kurang menarik
+2. Sistem masih memiliki tools paint yang terbatas
+
 ## Referensi
 [`^ kembali ke atas ^`](#)
 
