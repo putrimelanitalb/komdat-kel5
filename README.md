@@ -181,7 +181,7 @@ Cara pemakaian WBO sangat mudah karena tampilannya yang sangat sederhana sehingg
 3. Tersedia **“Public Board”** dimana nantinya kita dapat menggambar dengan siapapun tanpa mengetahui nama dari setiap pengguna.
 ![3](https://user-images.githubusercontent.com/60084871/111375214-90777700-86d0-11eb-8a51-501acffeb318.png)
 
-4. Tersedia **“Privat Board”** dimana kita dapat membuat *board* pribadi dengan nama random, dan *board* ini pun hanya bisa diakses melalui link tautannya.
+4. Tersedia **“Private Board”** dimana kita dapat membuat *board* pribadi dengan nama random, dan *board* ini pun hanya bisa diakses melalui link tautannya.
 ![4](https://user-images.githubusercontent.com/60084871/111375229-94a39480-86d0-11eb-9767-e5f54e06288d.png)
 
 5. Tersedia **“Named Private Board”** dimana kita dapat membuat *board* dengan nama yang sesuai kita inginkan, dan kita juga dapat berbagi link tautan *board* tersebut.
