@@ -124,7 +124,7 @@ WBO tersedia dalam berbagai bahasa. Terjemahan disimpan di `server/translations.
 
 1. Edit isi file server/translations.json.
    ```
-   sudo vim server/translations.json
+   $ sudo vim server/translations.json
    ```
 2. Tambahkan isi terjemahan bahasa yang baru di bawah bahasa lain. Misal, menambahkan Bahasa Indonesia ke dalam WBO.
    ```
