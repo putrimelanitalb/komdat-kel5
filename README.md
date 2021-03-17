@@ -102,7 +102,7 @@ Sebelum memulai VM, kita harus mengatur *Port Forwarding* terlebih dahulu agar d
   ```
   $ cd whitebophir
   ```
-* Install *dependencies* untuk WBO
+* Install WBO *dependencies*
   ```
   $ sudo npm install --production
   ```
