@@ -230,4 +230,5 @@ Kelebihan :
 [`^ kembali ke atas ^`](#)
 
 Original Repository : [https://github.com/lovasoa/whitebophir](https://github.com/lovasoa/whitebophir)
+
 Artikel Pendukung : https://www.ruangparabintang.com/2020/07/kumpulan-white-board-virtual-terbaik-di.html
