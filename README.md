@@ -72,7 +72,7 @@ Sebelum memulai VM, kita harus mengatur *Port Forwarding* terlebih dahulu agar d
   ```
   $ sudo apt-get install openssh-server
   ```
-* Mulai dan aktifkan SSH, serta pastikan SSH sudah aktif.
+* Jalankan SSH, serta pastikan SSH sudah aktif.
   ```
   $ sudo systemctl enable ssh
   $ sudo systemctl start ssh
